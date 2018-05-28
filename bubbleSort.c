@@ -1,15 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
-int bubbleSort(int v[]){                      //ªwªj±Æ¦C
-	int hold,count,pass;
-	for(pass=1;pass<10;pass++){                     
-	  for(count=0;count<9;count++){
-	    if(v[count]>v[count+1]){
-		  hold=v[count+1];
-		  v[count+1]=v[count];
-		  v[count]=hold;
-		}
+int bubbleSort(const int *origin[],int copy[]){                      
+int hold,count,pass,j;
+  for(pass=1;pass<10;pass++){                     
+	for(count=0;count<9;count++){
+	  if(copy[count]>copy[count+1]){
+		hold=copy[count+1];
+		copy[count+1]=copy[count];
+		copy[count]=hold;	  
 	  }
-	}		
-  return 0;
+	}
+  }
+for(j=0;j<10;j++){
+  printf("%d ",copy[j]);
+}		
+return 0;
 }
+
